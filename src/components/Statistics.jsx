@@ -21,7 +21,7 @@ export const Statistics = ({
       </>
     );
   } else {
-    <Notification message="There is no feedback" />;
+    return <Notification message="There is no feedback" />;
   }
 };
 
