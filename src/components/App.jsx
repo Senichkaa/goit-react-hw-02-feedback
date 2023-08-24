@@ -35,11 +35,11 @@ export class App extends Component {
         </Section>
         <Section title="Statistics">
           <Statistics
-            good={this.good}
-            bad={this.bad}
-            neutral={this.neutral}
-            onLeaveFeedback={this.countTotalFeedback}
-            positiveFeedbackPercentage={this.countPositiveFeedbackPercentage}
+            good={this.state.good}
+            bad={this.state.bad}
+            neutral={this.state.neutral}
+            onLeaveFeedback={this.countTotalFeedback()}
+            positiveFeedbackPercentage={this.countPositiveFeedbackPercentage()}
           />
         </Section>
       </div>
