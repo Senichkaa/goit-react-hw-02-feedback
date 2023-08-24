@@ -5,9 +5,9 @@ import { Statistics } from './Statistics';
 
 export class App extends Component {
   state = {
-    good: 7,
-    neutral: 5,
-    bad: 10,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
   countTotalFeedback = () => {
@@ -19,12 +19,14 @@ export class App extends Component {
   };
 
   onLeaveFeedback = event => {
-    const option = event.target.value;
+    const option = event.target.innerText;
+    // console.log(option);
     this.setState(prevState => ({ [option]: prevState[option] + 1 }));
   };
 
   render() {
     const keys = Object.keys(this.state);
+    // console.log({ keys });
     return (
       <div>
         <Section title="Please leave your feedback">
@@ -33,13 +35,15 @@ export class App extends Component {
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
-        <Section title="Statistics">
+        <Section>
           <Statistics
             good={this.state.good}
             bad={this.state.bad}
             neutral={this.state.neutral}
-            onLeaveFeedback={this.countTotalFeedback()}
-            positiveFeedbackPercentage={this.countPositiveFeedbackPercentage()}
+            totalFeedback={this.countTotalFeedback()}
+            positiveFeedbackPercentage={
+              this.countPositiveFeedbackPercentage() || 0
+            }
           />
         </Section>
       </div>

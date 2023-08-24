@@ -1,14 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Sections, Header } from './App.styled';
+// import PropTypes from 'prop-types';
 export const Section = ({ title, children }) => {
   return (
-    <section>
-      <h2>{title}</h2>
+    <Sections>
+      <Header>{title}</Header>
       {children}
-    </section>
+    </Sections>
   );
 };
 
-Section.propTypes = {
-  title: PropTypes.string,
-};
+// Section.propTypes = {
+//   title: PropTypes.string,
+// };

@@ -1,23 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Button, ButtonsDiv } from './App.styled';
+// import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div>
+    <ButtonsDiv>
       {options.map(option => (
-        <button key={option} type="button" onClick={onLeaveFeedback}>
+        <Button key={option} type="button" onClick={onLeaveFeedback}>
           {option}
-        </button>
+        </Button>
       ))}
-    </div>
+    </ButtonsDiv>
   );
 };
 
-FeedbackOptions.propTypes = {
-  options: PropTypes.shape({
-    good: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-  }),
-  onLeaveFeedback: PropTypes.func.isRequired,
-};
+// FeedbackOptions.propTypes = {
+//   options: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       good: PropTypes.number.isRequired,
+//       bad: PropTypes.number.isRequired,
+//       neutral: PropTypes.number.isRequired,
+//     }).isRequired
+//   ),
+//   onLeaveFeedback: PropTypes.func.isRequired,
+// };
