@@ -24,11 +24,12 @@ export class App extends Component {
   };
 
   render() {
+    const keys = Object.keys(this.state);
     return (
       <div>
         <Section title="Please leave your feedback">
           <FeedbackOptions
-            options={this.state}
+            options={keys}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
